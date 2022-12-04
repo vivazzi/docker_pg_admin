@@ -35,7 +35,15 @@ This is working example of installing postgresql and pgAdmin. You can use this c
 1. Get `IPAddress` of your postgresql container (this is required to connect to the server):
    
    ```shell
-   docker inspect postgres-postgres-1 | grep IPAddress
+   $ docker ps
+   
+   CONTAINER ID   IMAGE            COMMAND                  CREATED              STATUS                          PORTS                                            NAMES
+   771a12c63380   dpage/pgadmin4   "/entrypoint.sh"         About a minute ago   Up About a minute (unhealthy)   443/tcp, 0.0.0.0:5555->80/tcp, :::5555->80/tcp   docker_pg_admin-pgadmin-1
+   5c20922bf03f   postgres         "docker-entrypoint.s…"   About a minute ago   Up About a minute               0.0.0.0:6543->5432/tcp, :::6543->5432/tcp        docker_pg_admin-postgres-1
+   ```
+   
+   ```shell
+   docker inspect docker_pg_admin-postgres-1 | grep IPAddress
    ```
 
 2. Run `localhost:5555` in the browser and input email and password defined in `PGADMIN_DEFAULT_EMAIL` and `PGADMIN_DEFAULT_PASSWORD`.
