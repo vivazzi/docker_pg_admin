@@ -1,0 +1,25 @@
+# Editor directories and files
+*.pyc
+*.pyo
+*.py[co]
+*.swp
+*.orig
+.idea
+*~
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+*.egg-info
+*.pot
+.tox/
+__pycache__
+
+.env.*
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
